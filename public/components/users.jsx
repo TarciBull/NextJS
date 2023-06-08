@@ -17,16 +17,38 @@ export default function Users(usersData) {
         <th>Age</th>
         <th>Action</th>
       </thead>
-      <tbody>
-        <td>{usersData.usersData.users[0].photo}</td>
-        <td>{usersData.usersData.users[0].name}</td>
-        <td>{usersData.usersData.users[0].online  ? 'online':'offline'}</td>
-        <td>{usersData.usersData.users[0].registration }</td>
-        <td>{usersData.usersData.users[0].age}</td>
-        <td>
+      <tbody className="tbody1">
+        <td className="photo">{usersData.usersData.users[0].photo}</td>
+        <td className="name">{usersData.usersData.users[0].name}</td>
+        <td className="status">{usersData.usersData.users[0].online  ? 'online':'offline'}</td>
+        <td className="registration">{usersData.usersData.users[0].registration }</td>
+        <td className="age">{usersData.usersData.users[0].age} year</td>
+        <td className="chat">
           <button disabled={usersData.usersData.users[0].online ? false : true}>CHAT</button>
         </td>
       </tbody>
+      <tbody>
+        <td>{usersData.usersData.users[1].photo}</td>
+        <td>{usersData.usersData.users[1].name}</td>
+        <td>{usersData.usersData.users[1].online  ? 'online':'offline'}</td>
+        <td>{usersData.usersData.users[1].registration }</td>
+        <td>{usersData.usersData.users[1].age}</td>
+        <td>
+          <button disabled={usersData.usersData.users[1].online ? false : true}>CHAT</button>
+        </td>
+      </tbody>
+      <tbody>
+        <td>{usersData.usersData.users[2].photo}</td>
+        <td>{usersData.usersData.users[2].name}</td>
+        <td>{usersData.usersData.users[2].online  ? 'online':'offline'}</td>
+        <td>{usersData.usersData.users[2].registration }</td>
+        <td>{usersData.usersData.users[2].age}</td>
+        <td>
+          <button disabled={usersData.usersData.users[2].online ? false : true}>CHAT</button>
+        </td>
+      </tbody>
+      
+      
       {/* // console.log(usersData.usersData.users[0]) */}
       {/* <div>
       <div>{usersData.usersData.users[0].name}</div>

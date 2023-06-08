@@ -1,6 +1,54 @@
 html,body {
   min-width: 100vh
 }
-table,thead,tbody,td{
-  border-style: groove;
+
+.wrapper{
+  display: flex;
 }
+td{
+text-align: center;
+min-width: 10vh;
+height:  5vh;
+}
+table{
+min-width: 100%
+}
+th,td{
+  border-style: solid;
+}
+
+@media (max-width: 800px) {
+ 
+  
+  .tbody1{
+    justify-content: auto;align-items: flex-end;display: flex;flex-wrap: wrap;
+  }
+thead{
+  display: none;
+}
+
+table{
+  display: flex;
+  flex-direction: column;
+}
+.photo{
+  width: 27%;
+}
+.name{
+  order: 2;
+  width: 71%;
+}
+.registration{
+  order: 6;
+  width: 99%;
+}
+.age{
+  order: 3;
+  width: 27%;
+}
+.chat{
+  height: 10vh;order: 5;width: 35%;
+}
+.status{
+  flex-shrink: 2;height: 10vh;order: 4;width: 35%;
+}}
