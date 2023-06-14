@@ -1,25 +1,59 @@
 html,body {
-  min-width: 100vh
+  min-width: 100%
 }
 
-.wrapper{
+/* .wrapper{
   display: flex;
-}
+} */
 td{
 text-align: center;
 min-width: 10vh;
 height:  5vh;
 }
 table{
-min-width: 100%
+min-width: 100%;
+display: grid
 }
 th,td{
-  border-style: solid;
+  border: 1px solid black;
 }
-
-@media (max-width: 800px) {
+tbody{
+  display: grid;
+  margin: 10px;
+  grid-template-rows: repeat(3,2fr);
+  grid-template-areas: 
+  "photo name name"
+  "photo status chat"
+  "year status chat"
+  "registration registration registration";
+}
+.name{
+  grid-area: name;
+}
+.photo{
+  grid-area: photo;
+}
+.status{
+  grid-area: status;
+}
+.registration{
+  grid-area: registration;
+}
+.age{
+  grid-area: year;
+}
+.chat{
+  grid-area: chat;
+}
+/* .name{
+  grid-column: 2/span 2;
+}
+.photo{
+  grid-row: span 2
+} */
+/* @media (max-width: 800px) { */
  
-  
+/*   
   .tbody1{
     justify-content: auto;align-items: flex-end;display: flex;flex-wrap: wrap;
   }
@@ -51,4 +85,4 @@ table{
 }
 .status{
   flex-shrink: 2;height: 10vh;order: 4;width: 35%;
-}}
+}} */
