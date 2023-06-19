@@ -1,4 +1,4 @@
-import style from "../../public/components/styles.module.css";
+
 import Link from "next/link";
 import Users from "../../public/components/users";
 
@@ -13,17 +13,20 @@ function loadVideo() {
   let container = document.getElementById("video-container");
   let iframe = document.createElement("iframe");
   let thumbnail = document.getElementById("thumbnail");
-  iframe.setAttribute("src", "https://www.youtube.com/embed/RK1K2bCg4J8?autoplay=1",);
-  iframe.setAttribute("height", "300px",);
-  iframe.setAttribute("width", "500px",);
+  let width = thumbnail.offsetWidth;
+  let height = thumbnail.offsetHeight;
+  iframe.setAttribute("src", "https://www.youtube.com/embed/RK1K2bCg4J8?autoplay=1");
+  iframe.setAttribute("width", `${width}px`);
+  iframe.setAttribute("height", `${height}px`);
   container.removeChild(thumbnail);
-  container.appendChild(iframe)}
+  container.appendChild(iframe);
+}
 
 export default function MainComp({ data }) {
   return (
     <>
-      <div className={style.wrapper}>
-        <div className={style.textWrap}>
+      <div className={'wrapper'}>
+        <div className={'textWrap'}>
           <h2>{data.video.embed}</h2>
           <p>{data.video.text}</p>
           <Link href={data.video.link} target="_blank">

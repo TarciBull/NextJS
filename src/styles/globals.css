@@ -1,32 +1,98 @@
 html,body {
-  min-width: 100%
+  min-width: 100%;
 }
 
-/* .wrapper{
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5vh;
+  background-color: black;
+}
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 5vh;
+  background-color: black;
+}
+.textWrap {
   display: flex;
-} */
-td{
-text-align: center;
-min-width: 10vh;
-height:  5vh;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 90px;
+  margin-right: 10px;
+  text-align: center;
 }
-table{
-min-width: 100%;
-display: grid
+iframe{
+  margin: auto;
 }
-th,td{
-  border: 1px solid black;
+
+#thumbnail{
+  width: 100%;
+  height: auto;
 }
-tbody{
+#video-container {
+  margin-right: 90px;
+  margin-left: 10px;
+  height: auto;
+  cursor: pointer;
+ 
+}
+.wrapper {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+td {
+  height: 10vh;
+  width: 15%;
+}
+
+table {
+  width: 90%;
+  margin: auto;
+}
+
+
+td,th {
+  font-weight: 400;
+  border: 1px solid rgb(185, 176, 237);
+}
+@media (max-width : 800px) {
+  thead{
+    display: none;
+  }
+  td{
+    height: auto;
+    width: auto;
+    
+}
+#video-container {
+  margin: auto;}
+  .textWrap {
+    margin: auto;}
+tbody {
   display: grid;
   margin: 10px;
-  grid-template-rows: repeat(3,2fr);
+  grid-template-rows: repeat(4, 2fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-areas: 
-  "photo name name"
-  "photo status chat"
-  "year status chat"
-  "registration registration registration";
+    "photo name name"
+    "photo status chat"
+    "year status chat"
+    "registration registration registration";
+  
 }
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;}
+
 .name{
   grid-area: name;
 }
@@ -43,46 +109,50 @@ tbody{
   grid-area: year;
 }
 .chat{
-  grid-area: chat;
-}
-/* .name{
-  grid-column: 2/span 2;
-}
-.photo{
-  grid-row: span 2
-} */
-/* @media (max-width: 800px) { */
- 
-/*   
-  .tbody1{
-    justify-content: auto;align-items: flex-end;display: flex;flex-wrap: wrap;
-  }
-thead{
-  display: none;
-}
+  grid-area: chat;}}
 
-table{
-  display: flex;
-  flex-direction: column;
-}
-.photo{
-  width: 27%;
-}
-.name{
-  order: 2;
-  width: 71%;
-}
-.registration{
-  order: 6;
-  width: 99%;
-}
-.age{
-  order: 3;
-  width: 27%;
-}
-.chat{
-  height: 10vh;order: 5;width: 35%;
-}
-.status{
-  flex-shrink: 2;height: 10vh;order: 4;width: 35%;
-}} */
+  @media (max-width : 400px) {
+    thead{
+      display: none;
+    }
+    td{
+      height: auto;
+      width: auto;
+      
+  }
+  tbody {
+    display: grid;
+    margin: 10px;
+    grid-template-rows: repeat(3, 2fr);
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-areas: 
+      "photo photo photo photo status status chat"
+      "photo photo photo photo year year year"
+      "name name name name registration registration registration";
+    
+  }
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+  
+  .name{
+    grid-area: name;
+  }
+  .photo{
+    grid-area: photo;
+  }
+  .status{
+    grid-area: status;
+  }
+  .registration{
+    grid-area: registration;
+  }
+  .age{
+    grid-area: year;
+  }
+  .chat{
+    grid-area: chat;}
+    table {
+      width: 100%;
+      }}
