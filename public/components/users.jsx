@@ -1,49 +1,71 @@
 
+import Image from 'next/image'
 export default function Users(usersData) {
- 
+  const imageLoader = ({ src, width, quality }) => {
+    return `https://tz.smart-ui.pro/${src}?w=${width}&q=${quality || 75}`
+  }
+  const imageStyle = {
+    borderRadius: '50%',
+    objectFit:'cover',
+  }
+  
   return (
-    <div>
+    <>
+    
+    <div className='second-wrap'>
+    <h2>our users</h2>
     <table>
       <thead>
-        <th>photo</th>
-        <th>name</th>
-        <th>status</th>
-        <th>registration</th>
-        <th>age</th>
-        <th>action</th>
+        <tr>
+        <td>photo</td>
+        <td>name</td>
+        <td>status</td>
+        <td>registration</td>
+        <td>age</td>
+        <td>action</td>
+        </tr>
       </thead>
       <tbody>
-        <td className="photo"><tr>{usersData.usersData.users[0].photo}</tr></td>
-        <td className="name"><tr>{usersData.usersData.users[0].name}</tr></td>
-        <td className="status"><tr>{usersData.usersData.users[0].online  ? 'online':'offline'}</tr></td>
-        <td className="registration"><tr>{usersData.usersData.users[0].registration }</tr></td>
-        <td className="age"><tr>{usersData.usersData.users[0].age} year</tr></td>
-        <td className="chat"><tr>
-          <button disabled={usersData.usersData.users[0].online ? false : true}>CHAT</button></tr>
+        <tr>
+        <td className="photo"><Image loader ={imageLoader} src={usersData.usersData.users[0].photo} width={60}
+      height={60}alt={'avatar'}style={imageStyle} className='avatar'/></td>
+        <td className="name">{usersData.usersData.users[0].name}</td>
+        <td className="status">{usersData.usersData.users[0].online  ? 'online':'offline'}</td>
+        <td className="registration">{usersData.usersData.users[0].registration }</td>
+        <td className="age">{usersData.usersData.users[0].age} year</td>
+        <td className="chat">
+          <button disabled={usersData.usersData.users[0].online ? false : true}>CHAT</button>
         </td>
+        </tr>
       </tbody>
       <tbody>
-        <td className="photo"><tr>{usersData.usersData.users[1].photo}</tr></td>
-        <td className="name"><tr>{usersData.usersData.users[1].name}</tr></td>
-        <td className="status"><tr>{usersData.usersData.users[1].online  ? 'online':'offline'}</tr></td>
-        <td className="registration"><tr>{usersData.usersData.users[1].registration }</tr></td>
-        <td className="age"><tr>{usersData.usersData.users[1].age} year</tr></td>
-        <td className="chat"><tr>
-          <button disabled={usersData.usersData.users[1].online ? false : true}>CHAT</button></tr>
+        <tr>
+        <td className="photo"><div><Image loader ={imageLoader}src={usersData.usersData.users[1].photo} width={60}
+      height={60}alt={'avatar'}style={imageStyle}/></div></td>
+        <td className="name">{usersData.usersData.users[1].name}</td>
+        <td className="status">{usersData.usersData.users[1].online  ? 'online':'offline'}</td>
+        <td className="registration">{usersData.usersData.users[1].registration }</td>
+        <td className="age">{usersData.usersData.users[1].age} year</td>
+        <td className="chat">
+          <button disabled={usersData.usersData.users[1].online ? false : true}>CHAT</button>
         </td>
+        </tr>
       </tbody>
       <tbody>
-        <td className="photo"><tr>{usersData.usersData.users[2].photo}</tr></td>
-        <td className="name"><tr>{usersData.usersData.users[2].name}</tr></td>
-        <td className="status"><tr>{usersData.usersData.users[2].online  ? 'online':'offline'}</tr></td>
-        <td className="registration"><tr>{usersData.usersData.users[2].registration }</tr></td>
-        <td className="age"><tr>{usersData.usersData.users[2].age} year</tr></td>
-        <td className="chat"><tr>
-          <button disabled={usersData.usersData.users[2].online ? false : true}>CHAT</button></tr>
+        <tr>
+        <td className="photo"><Image loader ={imageLoader}src={usersData.usersData.users[2].photo} width={60}
+      height={60}alt={'avatar'}style={imageStyle}/></td>
+        <td className="name">{usersData.usersData.users[2].name}</td>
+        <td className="status">{usersData.usersData.users[2].online  ? 'online':'offline'}</td>
+        <td className="registration">{usersData.usersData.users[2].registration }</td>
+        <td className="age">{usersData.usersData.users[2].age} year</td>
+        <td className="chat">
+          <button disabled={usersData.usersData.users[2].online ? false : true}>CHAT</button>
         </td>
+        </tr>
       </tbody>
-      
     </table>
     </div>
+    </>
   );
 }

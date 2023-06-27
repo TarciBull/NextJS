@@ -1,24 +1,40 @@
-html,body {
+*{font-family: 'Open Sans', sans-serif};
+html{
+height: 100%;
   min-width: 100%;
 }
+body{
+  margin: 0;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow-x: hidden;
+}
 
+#thumbnail{
+  width:  100%;
+}
 .header {
-  width: 100%;
-  position: fixed;
+  width: 90%;
+  margin: auto;
   top: 0;
   left: 0;
-  height: 5vh;
+  height: 6vh;
   background-color: black;
 }
-.footer {
-  width: 100%;
-  position: fixed;
+.footer{
+  margin: auto;
+  width: 90%;
   bottom: 0;
   left: 0;
-  height: 5vh;
+  height: 6vh;
   background-color: black;
 }
+.second-wrap{
+  padding: 60px;
+}
 .textWrap {
+  font-weight: 300;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,55 +46,76 @@ iframe{
   margin: auto;
 }
 
-#thumbnail{
-  width: 100%;
-  height: auto;
-}
 #video-container {
+  position: relative;
   margin-right: 90px;
   margin-left: 10px;
   height: auto;
   cursor: pointer;
- 
+}
+#button{
+  width: 15%;
+  position: absolute;
+  left: 45%;
+  top: 40%;
+  opacity: 0.8;
 }
 .wrapper {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  
 }
 
 td {
   height: 10vh;
   width: 15%;
 }
+thead td{
+  height: 5vh;
+}
 
 table {
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
+.photo{
+  position: relative;
+}
 
-
-td,th {
+td,th{
   font-weight: 400;
   border: 1px solid rgb(185, 176, 237);
+  text-align: center;
 }
-@media (max-width : 800px) {
+@media (max-width : 768px) {
+  .second-wrap{
+    padding: 15px;
+  }
   thead{
     display: none;
   }
   td{
     height: auto;
     width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 #video-container {
-  margin: auto;}
+  margin: auto;
+  margin-top: 15px;
+width: 70%;}
   .textWrap {
-    margin: auto;}
-tbody {
+    margin: auto;
+  width: 70%;}
+tbody{
+margin: 10px
+}
+    tr {
   display: grid;
-  margin: 10px;
   grid-template-rows: repeat(4, 2fr);
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: 
@@ -110,8 +147,13 @@ tbody {
 }
 .chat{
   grid-area: chat;}}
-
-  @media (max-width : 400px) {
+.footer{
+  width: 100%;
+}
+.header{
+  width: 100%;
+}
+  @media (max-width : 480px) {
     thead{
       display: none;
     }
@@ -120,15 +162,17 @@ tbody {
       width: auto;
       
   }
-  tbody {
-    display: grid;
+  tbody{
     margin: 10px;
+  }
+  tr {
+    display: grid;
     grid-template-rows: repeat(3, 2fr);
     grid-template-columns: repeat(7, 1fr);
     grid-template-areas: 
-      "photo photo photo photo status status chat"
-      "photo photo photo photo year year year"
-      "name name name name registration registration registration";
+      "photo photo photo photo photo status chat"
+      "photo photo photo photo photo year year"
+      "name name name name name registration registration";
     
   }
   .wrapper{
