@@ -8,6 +8,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
+      <script src="https://kit.fontawesome.com/3cbd5b2231.js" crossorigin="anonymous"></script>
       </Head>
       <Header />
       <Component {...pageProps} />

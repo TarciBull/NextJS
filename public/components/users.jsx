@@ -5,13 +5,11 @@ export default function Users(usersData) {
     return `https://tz.smart-ui.pro/${src}?w=${width}&q=${quality || 75}`
   }
   const imageStyle = {
-    borderRadius: '50%',
     objectFit:'cover',
   }
   
   return (
     <>
-    
     <div className='second-wrap'>
     <h2>our users</h2>
     <table>
@@ -27,8 +25,8 @@ export default function Users(usersData) {
       </thead>
       <tbody>
         <tr>
-        <td className="photo"><Image loader ={imageLoader} src={usersData.usersData.users[0].photo} width={60}
-      height={60}alt={'avatar'}style={imageStyle} className='avatar'/></td>
+        <td className="photo"><Image className="avatar"loader ={imageLoader} src={usersData.usersData.users[0].photo} width={60}
+      height={60}alt={'avatar'}style={imageStyle} /></td>
         <td className="name">{usersData.usersData.users[0].name}</td>
         <td className="status">{usersData.usersData.users[0].online  ? 'online':'offline'}</td>
         <td className="registration">{usersData.usersData.users[0].registration }</td>
@@ -40,20 +38,20 @@ export default function Users(usersData) {
       </tbody>
       <tbody>
         <tr>
-        <td className="photo"><div><Image loader ={imageLoader}src={usersData.usersData.users[1].photo} width={60}
-      height={60}alt={'avatar'}style={imageStyle}/></div></td>
+        <td className="photo"><Image className="avatar"loader ={imageLoader}src={usersData.usersData.users[1].photo} width={60}
+      height={60}alt={'avatar'}style={imageStyle}/></td>
         <td className="name">{usersData.usersData.users[1].name}</td>
         <td className="status">{usersData.usersData.users[1].online  ? 'online':'offline'}</td>
         <td className="registration">{usersData.usersData.users[1].registration }</td>
         <td className="age">{usersData.usersData.users[1].age} year</td>
         <td className="chat">
-          <button disabled={usersData.usersData.users[1].online ? false : true}>CHAT</button>
+          <button disabled={usersData.usersData.users[1].online ? false : true}><FontAwesomeIcon icon="far fa-comment-dots" /></button>
         </td>
         </tr>
       </tbody>
       <tbody>
         <tr>
-        <td className="photo"><Image loader ={imageLoader}src={usersData.usersData.users[2].photo} width={60}
+        <td className="photo"><Image className="avatar"loader ={imageLoader}src={usersData.usersData.users[2].photo} width={60}
       height={60}alt={'avatar'}style={imageStyle}/></td>
         <td className="name">{usersData.usersData.users[2].name}</td>
         <td className="status">{usersData.usersData.users[2].online  ? 'online':'offline'}</td>
