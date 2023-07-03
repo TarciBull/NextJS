@@ -1,5 +1,12 @@
 
 import Image from 'next/image'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+ faCommentDots
+} from "@fortawesome/free-solid-svg-icons";
+
+
+
 export default function Users(usersData) {
   const imageLoader = ({ src, width, quality }) => {
     return `https://tz.smart-ui.pro/${src}?w=${width}&q=${quality || 75}`
@@ -7,6 +14,7 @@ export default function Users(usersData) {
   const imageStyle = {
     objectFit:'cover',
   }
+  
   
   return (
     <>
@@ -32,6 +40,7 @@ export default function Users(usersData) {
         <td className="registration">{usersData.usersData.users[0].registration }</td>
         <td className="age">{usersData.usersData.users[0].age} year</td>
         <td className="chat">
+        <FontAwesomeIcon  icon={faCommentDots} className='chat-icon' size='2xl' />
           <button disabled={usersData.usersData.users[0].online ? false : true}>CHAT</button>
         </td>
         </tr>
@@ -45,7 +54,8 @@ export default function Users(usersData) {
         <td className="registration">{usersData.usersData.users[1].registration }</td>
         <td className="age">{usersData.usersData.users[1].age} year</td>
         <td className="chat">
-          <button disabled={usersData.usersData.users[1].online ? false : true}><FontAwesomeIcon icon="far fa-comment-dots" /></button>
+        <FontAwesomeIcon icon={faCommentDots} className='chat-icon' size='2xl'/>
+          <button disabled={usersData.usersData.users[1].online ? false : true}>CHAT</button>
         </td>
         </tr>
       </tbody>
@@ -58,6 +68,7 @@ export default function Users(usersData) {
         <td className="registration">{usersData.usersData.users[2].registration }</td>
         <td className="age">{usersData.usersData.users[2].age} year</td>
         <td className="chat">
+        <FontAwesomeIcon  icon={faCommentDots}  className='chat-icon' size='2xl'/>
           <button disabled={usersData.usersData.users[2].online ? false : true}>CHAT</button>
         </td>
         </tr>
